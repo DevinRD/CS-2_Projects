@@ -1,0 +1,41 @@
+Devin Darnell - Project #2: BinarySearch
+
+string: 00000000
+status: valid
+decimal value: 0
+
+string: 11111111
+status: valid
+decimal value: 255
+
+string: 00000001
+status: valid
+decimal value: 1
+
+string: 00000100
+status: valid
+decimal value: 4
+
+string: 11000101
+status: valid
+decimal value: 197
+
+string: 10000000
+status: valid
+decimal value: 128
+
+string: 1010
+status: invalid
+
+string: 123
+status: invalid
+
+string: 98765432
+status: invalid
+
+string: 110011001
+status: invalid
+
+string: 000999333
+status: invalid
+

@@ -1,0 +1,56 @@
+
+List race beginning...
+
+Fill race, N = 10,000,000
+  array fill:     0.125 seconds
+  ArrayList fill: 0.758 seconds
+
+Increment race, N = 10,000,000
+  array increment:     0.016 seconds
+  ArrayList increment: 0.562 seconds
+
+Search race, N = 10,000,000
+  array search, 50 values:     0.156 seconds
+  ArrayList search, 50 values: 1.536 seconds
+
+Expand race, N = 10,000,000
+  ArrayList w/o expansion:     0.437 seconds
+  ArrayList with expansion:    0.938 seconds
+
+
+List race beginning...
+
+Fill race, N = 10,000,000
+  array fill:     0.125 seconds
+  ArrayList fill: 0.64 seconds
+
+Increment race, N = 10,000,000
+  array increment:     0.016 seconds
+  ArrayList increment: 0.457 seconds
+
+Search race, N = 10,000,000
+  array search, 50 values:     0.109 seconds
+  ArrayList search, 50 values: 1.501 seconds
+
+Expand race, N = 10,000,000
+  ArrayList w/o expansion:     0.452 seconds
+  ArrayList with expansion:    0.66 seconds
+
+
+List race beginning...
+
+Fill race, N = 10,000,000
+  array fill:     0.132 seconds
+  ArrayList fill: 0.759 seconds
+
+Increment race, N = 10,000,000
+  array increment:     0.016 seconds
+  ArrayList increment: 0.443 seconds
+
+Search race, N = 10,000,000
+  array search, 50 values:     0.11 seconds
+  ArrayList search, 50 values: 1.141 seconds
+
+Expand race, N = 10,000,000
+  ArrayList w/o expansion:     0.219 seconds
+  ArrayList with expansion:    1.145 seconds

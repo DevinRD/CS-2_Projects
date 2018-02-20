@@ -52,7 +52,7 @@ public class Main {
                                         + "\n        5. append"
                                         + "\n        6. insert in order"
                                         + "\n        7. delete value from list"
-                                        + "\n        or <n> to return to top-level menu\n");
+                                        + "\n        8. return to top-level menu\n");
 
                     choice = scnr.nextInt();
                     System.out.println();
@@ -119,7 +119,7 @@ public class Main {
                                         + "\n        6. delete first value"
                                         + "\n        7. delete last value"
                                         + "\n        8. print in reverse"
-                                        + "\n        or <n> to return to top-level menu\n");
+                                        + "\n        9. return to top-level menu\n");
 
                     choice = scnr.nextInt();
                     System.out.println();
@@ -140,6 +140,7 @@ public class Main {
                             break;
                         case 2:
                             list2.clear();
+                            System.out.println(list2);
                             break;
                         case 3:
                             if (list2.isSorted()) {
@@ -160,8 +161,12 @@ public class Main {
                             list2.insertValuePosition(doubleValue, position);
                             break;
                         case 5:
+                            if (list2.isSorted()) {
                             System.out.println("Enter value to insert:");
                             doubleValue = scnr.nextDouble();
+                            } else {
+                                System.out.println("The list is not sorted.");
+                            }
 
                             list2.insertInOrder(doubleValue);
                             break;
@@ -191,7 +196,7 @@ public class Main {
                                         + "\n        5. insert at end of list"
                                         + "\n        6. print all strings less that a certain value"
                                         + "\n        7. output minimum and maximum length strings"
-                                        + "\n        or <n> to return to top-level menu\n");
+                                        + "\n        8. return to top-level menu\n");
 
                     choice = scnr.nextInt();
                     System.out.println();

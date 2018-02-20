@@ -54,22 +54,12 @@ public class List2 {
     }   // end of build method
 
     /*
-        clears the list
-    */
-    public void clear() {
-        head = null;
-        current = null;
-        tail = null;
-        System.out.println(this);
-    }   // end of clear method
-
-    /*
         returns a boolean value based on if the list is in acending order
     */
     public boolean isSorted() {
         current = head;
 
-        if (head != null && head.next != null) {
+        if (!isEmpty() && head.next != null) {  // checks if there is 1 or no values in the list
             while (current.next != null) {
                 if (current.data > current.next.data) {
                     return false;
@@ -88,7 +78,7 @@ public class List2 {
     public void insertValuePosition(double value, int position) {
         current = head;
 
-        if (head == null) { // checks for empty list
+        if (isEmpty()) { // checks for empty list
                 if (position == 1) {
                     head = new Node(value);
                     tail = head;
@@ -97,26 +87,27 @@ public class List2 {
                 }
         } else {
 
-            if (position == 1) {
+            if (position == 1) {    // handles a change at the beginning of the list
                 head = new Node(value);
                 head.next = current;
-                head.next.last = head;
+                current.last = head;
             } else {
-                for (int i = 1; i < position - 1; i ++) {
+                for (int i = 1; i < position; i ++) {   // places current at the position (1-based)
                     current = current.next;
                 }
 
-                Node temp = current.next;
-                current.next = new Node(value);
-                current.next.last = current;
-                current.next.next = temp;
-                temp.last = current.next;
-
-                if (current.next.next != null) {
-                    current.next.next.last = current.next;
+                if (current != null) {      // handles if inserted at end of list
+                    Node temp = current;
+                    current = new Node(value);
+                    current.last = temp.last;
+                    current.last.next = current;
+                    current.next = temp;
+                    temp.last = current;
                 } else {
-                    tail = current.next;
-                    tail.last = current;
+                    current = new Node(value);
+                    tail.next = current;
+                    current.last = tail;
+                    tail = tail.next;
                 }
             }
         }
@@ -130,43 +121,33 @@ public class List2 {
     public void insertInOrder(double value) {
         current = head;
 
-        if (head == null) { // if list is empty
+        if (isEmpty()) { // if list is empty
             head = new Node(value);
             tail = head;
-        } else if (head.next == null) { // singleton
-            if (value >= head.data) {
-                head.next = new Node(value);
-            } else {
-                head = new Node(value);
-                head.next = current;
-            }
-
-            tail = head.next;
-            tail.last = head;
-
         } else {
-            if (value <= current.data) {
+            if (value <= head.data) {   // inserted at beginning of list
                 head = new Node(value);
                 head.next = current;
                 current.last = head;
-                System.out.println(this);
-                return;
-            }
-            while (current.next != null) {
-                if (current.data <= value && current.next.data >= value) {
-                    Node temp = current.next;
-                    current.next = new Node(value);
-                    current.next.next = temp;
-                    temp.last = current.next;
-                    current.next.last = current;
-                    System.out.println(this);
-                    return;
+            } else {
+                while (current.next != null) {
+                    if (current.data <= value && current.next.data >= value) {
+                        Node temp = new Node(value);
+                        temp.next = current.next;
+                        current.next = temp;
+                        temp.last = current;
+                        temp.next.last = temp;
+                        break;
+                    }
+                    current = current.next;
                 }
-                current = current.next;
+
+                if (current.next == null) {  // inserts at end of list
+                    current.next = new Node(value);
+                    tail = current.next;
+                    tail.last = current;
+                }
             }
-            current.next = new Node(value);
-            tail = current.next;
-            tail.last = current;
         }
 
         System.out.println(this);
@@ -176,15 +157,15 @@ public class List2 {
         deletes the first value in the list
     */
     public void deleteFirst() {
-        if (head == null) {     // if list is empty
+        if (isEmpty()) {     // if list is empty
             System.out.println("The list is empty");
         } else if (head.next == null) {     // singleton
-                head = null;
-                tail = head;
+                clear();
         } else {     // avaerage list
             head = head.next;
             head.last = null;
         }
+
         System.out.println(this);
     }   // end of deleteFirst method
 
@@ -192,14 +173,14 @@ public class List2 {
         deletes the last item in the list
     */
     public void deleteLast() {
-        if (tail != null) {
-            if (tail.last != null) {
-                tail.last.next = null;
-                tail = tail.last;
+        if (isEmpty()) {
+            System.out.println("The list is empty.");
+        } else {
+            if (head.next == null) {
+                clear();
             } else {
-                tail.last = null;
-                tail = null;
-                head = null;
+                tail = tail.last;
+                tail.next = null;
             }
         }
 
@@ -226,6 +207,19 @@ public class List2 {
 
         System.out.println(output);
     }   // end of printInReverse
+
+    /*
+        clears the list
+    */
+    public void clear() {
+        head = null;
+        current = null;
+        tail = null;
+    }   // end of clear method
+
+    public boolean isEmpty() {
+        return head == null;
+    }
 
     /*
         prints the values in the list to the screen

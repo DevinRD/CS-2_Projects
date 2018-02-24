@@ -162,13 +162,13 @@ public class Main {
                             break;
                         case 5:
                             if (list2.isSorted()) {
-                            System.out.println("Enter value to insert:");
-                            doubleValue = scnr.nextDouble();
+                                System.out.println("Enter value to insert:");
+                                doubleValue = scnr.nextDouble();
+                                list2.insertInOrder(doubleValue);
                             } else {
                                 System.out.println("The list is not sorted.");
+                                System.out.println(list2);
                             }
-
-                            list2.insertInOrder(doubleValue);
                             break;
                         case 6:
                             list2.deleteFirst();

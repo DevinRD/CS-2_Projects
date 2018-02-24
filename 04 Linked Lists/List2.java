@@ -215,6 +215,8 @@ public class List2 {
         head = null;
         current = null;
         tail = null;
+
+        System.out.println(this);
     }   // end of clear method
 
     public boolean isEmpty() {

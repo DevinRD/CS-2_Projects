@@ -1,0 +1,21 @@
+add
+4x^2 + 3x + 5
+x^2 + 10x + 2
+evaluate
+x^5 + 3x^2 + 4x
+1
+evaluate
+2x^3 + 5x^2 + 3x + 1
+2
+add
+x^4 + 10x^2
+3x + 1
+add
+7
+23
+add
+x
+x^2 + 16
+evaluate
+x
+33

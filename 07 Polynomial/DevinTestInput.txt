@@ -1,0 +1,24 @@
+evaluate
+11
+5
+evaluate
+2x^3 + 5x^2 + 3x + 1
+10
+add
+5x^3 + x + 4
+2x^3 + x^2 + 2
+add
+x^4 + 10x^2
+5
+evaluate
+5x^5 + 3x^2 + 4x
+2
+evaluate
+x^4 + x^3 + x^2 + x
+3
+add
+x^3 + 4x^2 + 5x
+6x^3 + 3x^2 + 9x
+add
+6x
+32x

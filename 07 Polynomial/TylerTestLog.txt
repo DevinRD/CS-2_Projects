@@ -1,0 +1,31 @@
+Devin Darnell - Cs2 TTh - 03/05/18
+
+evaluate
+x^4 + x^2 + 3x
+1
+5
+
+evaluate
+2x^3 + 8x^2 + 3x + 5
+5
+470
+
+add
+x^2 + 2x^2
+9x + 6
+x^2 + 2x^2 + 9x + 6
+
+add
+10
+6
+16
+
+add
+x^5
+x + 4
+x^5 + x + 4
+
+evaluate
+x
+54
+54
